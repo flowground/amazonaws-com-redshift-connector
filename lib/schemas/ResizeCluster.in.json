@@ -1,0 +1,70 @@
+{
+    "type": "object",
+    "properties": {
+        "Action": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "Classic": {
+                    "description": "A boolean value indicating whether the resize operation is using the classic resize process. If you don't provide this parameter or set the value to <code>false</code>, the resize type is elastic. ",
+                    "type": "boolean"
+                },
+                "ClusterIdentifier": {
+                    "description": "The unique identifier for the cluster to resize.",
+                    "type": "string"
+                },
+                "ClusterType": {
+                    "description": "The new cluster type for the specified cluster.",
+                    "type": "string"
+                },
+                "NodeType": {
+                    "description": "The new node type for the nodes you are adding.",
+                    "type": "string"
+                },
+                "NumberOfNodes": {
+                    "description": "The new number of nodes for the cluster.",
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "ClusterIdentifier",
+                "NumberOfNodes"
+            ],
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

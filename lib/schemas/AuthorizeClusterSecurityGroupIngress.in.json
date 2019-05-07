@@ -1,0 +1,66 @@
+{
+    "type": "object",
+    "properties": {
+        "Action": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "<p/>",
+            "properties": {
+                "CIDRIP": {
+                    "description": "The IP range to be added the Amazon Redshift security group.",
+                    "type": "string"
+                },
+                "ClusterSecurityGroupName": {
+                    "description": "The name of the security group to which the ingress rule is added.",
+                    "type": "string"
+                },
+                "EC2SecurityGroupName": {
+                    "description": "The EC2 security group to be added the Amazon Redshift security group.",
+                    "type": "string"
+                },
+                "EC2SecurityGroupOwnerId": {
+                    "description": "<p>The AWS account number of the owner of the security group specified by the <i>EC2SecurityGroupName</i> parameter. The AWS Access Key ID is not an acceptable value. </p> <p>Example: <code>111122223333</code> </p>",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ClusterSecurityGroupName"
+            ],
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

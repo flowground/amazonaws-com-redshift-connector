@@ -1,0 +1,85 @@
+{
+    "type": "object",
+    "properties": {
+        "Action": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "<p/>",
+            "properties": {
+                "ClusterSubnetGroupName": {
+                    "description": "<p>The name for the subnet group. Amazon Redshift stores the value as a lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain no more than 255 alphanumeric characters or hyphens.</p> </li> <li> <p>Must not be \"Default\".</p> </li> <li> <p>Must be unique for all subnet groups that are created by your AWS account.</p> </li> </ul> <p>Example: <code>examplesubnetgroup</code> </p>",
+                    "type": "string"
+                },
+                "Description": {
+                    "description": "A description for the subnet group.",
+                    "type": "string"
+                },
+                "SubnetIds": {
+                    "description": "An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a single request.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "Tags": {
+                    "description": "A list of tag instances.",
+                    "items": {
+                        "description": "A tag consisting of a name/value pair for a resource.",
+                        "properties": {
+                            "Key": {
+                                "description": "The key, or name, for the resource tag.",
+                                "type": "string"
+                            },
+                            "Value": {
+                                "description": "The value for the resource tag.",
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "ClusterSubnetGroupName",
+                "Description",
+                "SubnetIds"
+            ],
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

@@ -1,0 +1,75 @@
+{
+    "type": "object",
+    "properties": {
+        "Action": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "ClusterIdentifier": {
+                    "description": "A unique identifier for the cluster.",
+                    "type": "string"
+                },
+                "DeferMaintenance": {
+                    "description": "A boolean indicating whether to enable the deferred maintenance window. ",
+                    "type": "boolean"
+                },
+                "DeferMaintenanceDuration": {
+                    "description": "An integer indicating the duration of the maintenance window in days. If you specify a duration, you can't specify an end time. The duration must be 14 days or less.",
+                    "type": "integer"
+                },
+                "DeferMaintenanceEndTime": {
+                    "description": "A timestamp indicating end time for the deferred maintenance window. If you specify an end time, you can't specify a duration.",
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "DeferMaintenanceIdentifier": {
+                    "description": "A unique identifier for the deferred maintenance window.",
+                    "type": "string"
+                },
+                "DeferMaintenanceStartTime": {
+                    "description": "A timestamp indicating the start time for the deferred maintenance window.",
+                    "format": "date-time",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ClusterIdentifier"
+            ],
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

@@ -1,0 +1,108 @@
+{
+    "type": "object",
+    "properties": {
+        "Action": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "<p/>",
+            "properties": {
+                "ParameterGroupName": {
+                    "description": "The name of the cluster parameter group to be reset.",
+                    "type": "string"
+                },
+                "Parameters": {
+                    "description": "<p>An array of names of parameters to be reset. If <i>ResetAllParameters</i> option is not used, then at least one parameter name must be supplied. </p> <p>Constraints: A maximum of 20 parameters can be reset in a single request.</p>",
+                    "items": {
+                        "description": "Describes a parameter in a cluster parameter group.",
+                        "properties": {
+                            "AllowedValues": {
+                                "description": "The valid range of values for the parameter.",
+                                "type": "string"
+                            },
+                            "ApplyType": {
+                                "description": "Specifies how to apply the WLM configuration parameter. Some properties can be applied dynamically, while other properties require that any associated clusters be rebooted for the configuration changes to be applied. For more information about parameters and parameter groups, go to <a href=\"http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html\">Amazon Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.",
+                                "enum": [
+                                    "static",
+                                    "dynamic"
+                                ],
+                                "type": "string"
+                            },
+                            "DataType": {
+                                "description": "The data type of the parameter.",
+                                "type": "string"
+                            },
+                            "Description": {
+                                "description": "A description of the parameter.",
+                                "type": "string"
+                            },
+                            "IsModifiable": {
+                                "description": "If <code>true</code>, the parameter can be modified. Some parameters have security or operational implications that prevent them from being changed. ",
+                                "type": "boolean"
+                            },
+                            "MinimumEngineVersion": {
+                                "description": "The earliest engine version to which the parameter can apply.",
+                                "type": "string"
+                            },
+                            "ParameterName": {
+                                "description": "The name of the parameter.",
+                                "type": "string"
+                            },
+                            "ParameterValue": {
+                                "description": "The value of the parameter.",
+                                "type": "string"
+                            },
+                            "Source": {
+                                "description": "The source of the parameter value, such as \"engine-default\" or \"user\".",
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "ResetAllParameters": {
+                    "description": "<p>If <code>true</code>, all parameters in the specified parameter group will be reset to their default values. </p> <p>Default: <code>true</code> </p>",
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "ParameterGroupName"
+            ],
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

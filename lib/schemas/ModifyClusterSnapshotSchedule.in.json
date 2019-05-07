@@ -1,0 +1,61 @@
+{
+    "type": "object",
+    "properties": {
+        "Action": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "ClusterIdentifier": {
+                    "description": "A unique identifier for the cluster whose snapshot schedule you want to modify. ",
+                    "type": "string"
+                },
+                "DisassociateSchedule": {
+                    "description": "A boolean to indicate whether to remove the assoiciation between the cluster and the schedule.",
+                    "type": "boolean"
+                },
+                "ScheduleIdentifier": {
+                    "description": "A unique alphanumeric identifier for the schedule that you want to associate with the cluster.",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ClusterIdentifier"
+            ],
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

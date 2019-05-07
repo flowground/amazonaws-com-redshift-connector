@@ -1,0 +1,84 @@
+{
+    "type": "object",
+    "properties": {
+        "Action": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "DryRun": {
+                    "type": "boolean"
+                },
+                "NextInvocations": {
+                    "type": "integer"
+                },
+                "ScheduleDefinitions": {
+                    "description": "The definition of the snapshot schedule. The definition is made up of schedule expressions, for example \"cron(30 12 *)\" or \"rate(12 hours)\". ",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "ScheduleDescription": {
+                    "description": "The description of the snapshot schedule.",
+                    "type": "string"
+                },
+                "ScheduleIdentifier": {
+                    "description": "A unique identifier for a snapshot schedule. Only alphanumeric characters are allowed for the identifier.",
+                    "type": "string"
+                },
+                "Tags": {
+                    "items": {
+                        "description": "A tag consisting of a name/value pair for a resource.",
+                        "properties": {
+                            "Key": {
+                                "description": "The key, or name, for the resource tag.",
+                                "type": "string"
+                            },
+                            "Value": {
+                                "description": "The value for the resource tag.",
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

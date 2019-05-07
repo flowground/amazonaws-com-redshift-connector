@@ -1,0 +1,76 @@
+{
+    "type": "object",
+    "properties": {
+        "Action": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "ClusterIdentifier": {
+                    "description": "The unique identifier for the cluster whose snapshot schedules you want to view.",
+                    "type": "string"
+                },
+                "Marker": {
+                    "description": "A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>marker</code> parameter and retrying the command. If the <code>marker</code> field is empty, all response records have been retrieved for the request.",
+                    "type": "string"
+                },
+                "MaxRecords": {
+                    "description": "The maximum number or response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned <code>marker</code> value.",
+                    "type": "integer"
+                },
+                "ScheduleIdentifier": {
+                    "description": "A unique identifier for a snapshot schedule.",
+                    "type": "string"
+                },
+                "TagKeys": {
+                    "description": "The key value for a snapshot schedule tag.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "TagValues": {
+                    "description": "The value corresponding to the key of the snapshot schedule tag.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

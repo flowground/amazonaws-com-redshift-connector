@@ -1,0 +1,128 @@
+{
+    "type": "object",
+    "properties": {
+        "MaxRecords": {
+            "required": false,
+            "type": "string"
+        },
+        "Marker": {
+            "required": false,
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "<p/>",
+            "properties": {
+                "ClusterExists": {
+                    "description": "A value that indicates whether to return snapshots only for an existing cluster. Table-level restore can be performed only using a snapshot of an existing cluster, that is, a cluster that has not been deleted. If <code>ClusterExists</code> is set to <code>true</code>, <code>ClusterIdentifier</code> is required.",
+                    "type": "boolean"
+                },
+                "ClusterIdentifier": {
+                    "description": "The identifier of the cluster for which information about snapshots is requested.",
+                    "type": "string"
+                },
+                "EndTime": {
+                    "description": "<p>A time value that requests only snapshots created at or before the specified time. The time value is specified in ISO 8601 format. For more information about ISO 8601, go to the <a href=\"http://en.wikipedia.org/wiki/ISO_8601\">ISO8601 Wikipedia page.</a> </p> <p>Example: <code>2012-07-16T18:00:00Z</code> </p>",
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "Marker": {
+                    "description": "An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeClusterSnapshots</a> request exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. ",
+                    "type": "string"
+                },
+                "MaxRecords": {
+                    "description": "<p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p> <p>Default: <code>100</code> </p> <p>Constraints: minimum 20, maximum 100.</p>",
+                    "type": "integer"
+                },
+                "OwnerAccount": {
+                    "description": "The AWS customer account used to create or copy the snapshot. Use this field to filter the results to snapshots owned by a particular account. To describe snapshots you own, either specify your AWS customer account, or do not specify the parameter.",
+                    "type": "string"
+                },
+                "SnapshotIdentifier": {
+                    "description": "The snapshot identifier of the snapshot about which to return information.",
+                    "type": "string"
+                },
+                "SnapshotType": {
+                    "description": "<p>The type of snapshots for which you are requesting information. By default, snapshots of all types are returned.</p> <p>Valid Values: <code>automated</code> | <code>manual</code> </p>",
+                    "type": "string"
+                },
+                "SortingEntities": {
+                    "items": {
+                        "description": "Describes a sorting entity",
+                        "properties": {
+                            "Attribute": {
+                                "description": "The category for sorting the snapshots.",
+                                "enum": [
+                                    "SOURCE_TYPE",
+                                    "TOTAL_SIZE",
+                                    "CREATE_TIME"
+                                ],
+                                "type": "string"
+                            },
+                            "SortOrder": {
+                                "description": "The order for listing the attributes.",
+                                "enum": [
+                                    "ASC",
+                                    "DESC"
+                                ],
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Attribute"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "StartTime": {
+                    "description": "<p>A value that requests only snapshots created at or after the specified time. The time value is specified in ISO 8601 format. For more information about ISO 8601, go to the <a href=\"http://en.wikipedia.org/wiki/ISO_8601\">ISO8601 Wikipedia page.</a> </p> <p>Example: <code>2012-07-16T18:00:00Z</code> </p>",
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "TagKeys": {
+                    "description": "A tag key or keys for which you want to return all matching cluster snapshots that are associated with the specified key or keys. For example, suppose that you have snapshots that are tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the snapshots that have either or both of these tag keys associated with them.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "TagValues": {
+                    "description": "A tag value or values for which you want to return all matching cluster snapshots that are associated with the specified tag value or values. For example, suppose that you have snapshots that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the snapshots that have either or both of these tag values associated with them.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}
